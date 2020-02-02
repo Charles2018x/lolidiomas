@@ -1,0 +1,92 @@
+@import "variables";
+
+@mixin fontsFooter($weight, $margin: 10px, $transform: "unset"){
+    color: $white-color;
+    letter-spacing: 1px;
+    font:{
+        size: 12px;
+        weight: $weight;
+    }
+    margin-bottom: $margin;
+    text-transform: $transform;
+    :hover{
+        opacity: .7;
+        text-decoration: none;
+    }
+}
+.padding-0{
+    padding: 0;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.display-none{
+    display: none;
+}
+body{
+    color: $font-color-general;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    .top-header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 5%;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px 0px;
+        .logo-home{
+            width: 10%;
+        }
+        .nav ul{
+                margin: 0;
+            li{
+                list-style: none;
+                display: table-cell;
+                padding: 5px 10px;
+            }
+        }
+        .contact{
+            width: 10%;
+            img{
+                max-width: 8%;
+            }
+            span{
+                font-size: 14px;
+            }
+        }
+    }
+}
+.main-container {
+    margin: 20px auto 50px;
+    max-width: 90%;
+}
+footer.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 5%;
+    background-color: $color-theme-two;
+    ul {
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        li {
+            list-style: none;
+                @include fontsFooter(100);
+            a{
+                @include fontsFooter(100, $margin: 0);
+            }
+            img.social-media{
+                width: 15px;
+                height: auto;
+                margin-right: 10px;
+            }
+        }
+        li.footer-title{
+            @include fontsFooter(600, $margin: 15px, $transform: "uppercase");
+        }
+    }
+}
